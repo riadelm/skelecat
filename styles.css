@@ -1,0 +1,62 @@
+/* Global reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: floatUpDown 3s ease-in-out infinite;
+    background-color: white; /* Add white background to show on sides */
+}
+
+#hoveringImage {
+    max-width: 100%; /* Ensure the image does not exceed the width of the screen */
+    max-height: 100%; /* Ensure the image does not exceed the height of the screen */
+    object-fit: contain; /* Keep the aspect ratio, and show white space if necessary */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+}
+
+#gifButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#gifImage {
+    width: 450px; /* 3x the original size */
+    height: auto;
+}
+
+/* Floating animation for background image */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
